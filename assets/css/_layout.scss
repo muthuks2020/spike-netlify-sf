@@ -1,0 +1,674 @@
+@mixin center-h(){
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+@mixin center-v(){
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+@mixin center-vh(){
+  @include center-h();
+  @include center-v();
+}
+
+body{
+  margin: 0;
+}
+
+.top-msg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: $highlight-color-dark;
+  z-index: 5;
+  color: white;
+  text-align: center;
+  span{
+    @include center-v();
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+nav.side{
+  position: fixed;
+  display: block;
+  float: left;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  //height: 1024px;
+  padding: 4rem 2rem 2rem 2rem;
+  //background-image: url('assets/images/sidebar.png');
+  //background-position: center center;
+  //background-size: cover;
+  background-color: $nav-background-color;
+  color: $highlight-color-dark;
+  overflow: scroll;
+  @media (max-width: 800px){
+    width: 100%;
+    position: relative;
+    float: none;
+    height: auto !important;
+  }
+  img.logo{
+    @include center-h();
+    padding-top: 2rem;
+    &.site{
+      @media (max-width: 800px){
+        height: 15rem;
+      }
+    }
+  }
+  ul.icons{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    li{
+      display: inline;
+      font-size: modular-scale(3);
+      padding: 1rem;
+      &.mobile-menu{
+        display: none;
+        @media(max-width: 800px){
+          display: inline;
+        }
+      }
+    }
+    a{
+      color: $highlight-color-dark;
+      transition: all .2s linear;
+      &:hover{
+        color: tint($highlight-color-dark, 25);
+      }
+    }
+    label{
+      display: inline;
+      margin-bottom: 0;
+      font-weight: normal;
+    }
+  }
+  ul.menu{
+    padding-top: 2rem;
+    overflow: hidden;
+    max-height: auto;
+    transition: max-height 1s linear;
+    li{
+      text-align: center;
+      text-transform: uppercase;
+      padding: .5rem 0 .5rem 0;
+      //font-size: modular-scale(-1);
+    }
+    a{
+      color: $highlight-color-dark;
+      transition: all .2s linear;
+      &:hover{
+        color: tint($highlight-color-dark, 25);
+      }
+    }
+  }
+  h1{
+    font-size: modular-scale(1);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  button{
+    @include center-h();
+    background-color: $highlight-color-light;
+    &:hover{
+      background-color: shade($highlight-color-light, 10);
+    }
+  }
+  #sponsors{
+    padding-bottom: 2rem;
+    text-align: center;
+    h1{
+      margin-bottom: 0;
+    }
+    img.logo{
+      transform: none;
+      left: auto;
+      max-height: 10rem;
+    }
+    @media (max-width: 800px){
+      img.logo{
+        max-width: 15rem;
+        transform: none;
+        left: auto;
+      }
+    }
+  }
+  .copyright{
+    font-size: modular-scale(-1);
+    color: $highlight-color-dark;
+    text-align: center;
+    padding-top: 2rem;
+    text-transform: uppercase;
+    &:last-child{
+      padding: 0;
+      margin: 0;
+    }
+  }
+  @media (max-width: 800px){
+    ul.menu{
+      display: none;
+    }
+    #sponsors{
+      display: none;
+    }
+  }
+}
+
+.hero{
+  background-size: cover;
+  background-position: center;
+  height: 25rem;
+}
+
+.main{
+  position: relative;
+  top: 0;
+  margin-left: 20rem;
+  overflow: auto;
+  width: calc(100% - 20rem);
+  //height: 100%;
+  padding-top: 4rem;
+  #mission{
+    background: url('/assets/images/orange-bg.png') no-repeat;
+    background-size: cover ; 
+    background-position: center ;
+    color: white;
+    padding: 3rem 4rem;
+    text-align: center;
+    h3{
+      font-size: modular-scale(0);
+      margin: 0;
+    }
+    @media (max-width: $medium-screen){
+      padding: 2rem;
+    }
+    a{
+      color: $highlight-color-dark;
+      &:hover{
+        color: tint($highlight-color-dark, 20);
+      }
+    }
+  }
+  #farm{
+    padding: 3rem 4rem;
+    text-align: center;
+    img{
+      width: 35rem;
+      padding-bottom: 1rem;
+    }
+    @media (max-width: $medium-screen){
+      padding: 2rem;
+    }
+  }
+  #sign-up{
+    padding: 3rem 2rem;
+    text-align: center;
+    h3{
+    }
+    #{$all-text-inputs}{
+      display: inline-block;
+      width: 12rem;
+      font-size: modular-scale(-1);
+      line-height: 1.8rem;
+      &:placeholder-shown{
+        text-transform: uppercase;
+      }
+    }
+  }
+  #countdown{
+    //height: 25rem;
+    background: url('/assets/images/mountains.jpg')  no-repeat fixed center;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    h3{
+      text-transform: uppercase;
+      color: white;
+    }
+    #clock{
+      font-size: 4rem;
+      position: relative;
+      top: 3rem;
+      span{
+        font-size: 4rem;
+        background-color: rgba(0,0,0,0.2);
+        padding: 2rem 1rem;
+        margin: 0 1rem;
+      }
+    }
+  }
+  #upcoming-events{
+    padding: 2rem 2rem 4rem 2rem;
+    background-color: $secondary-background-color;
+    h3{
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  #event-details{
+    padding: 4rem 2rem 0;
+    h1{
+      color: $highlight-color-dark;
+      margin-bottom: 0;
+    }
+    h2{
+      color: $highlight-color-light;
+      margin-bottom: 0;
+      font-size: modular-scale(2);
+      font-family: $heading-font-family-dark;
+      text-transform: uppercase;
+    }
+    h3{
+      color: $highlight-color-light;
+      margin-bottom: 0;
+      font-size: modular-scale(0);
+    }
+    h4{
+      color: $highlight-color-dark;
+      margin-bottom: 0;
+      font-size: modular-scale(0);
+    }
+    h5{
+      margin-bottom: 0;
+      font-size: modular-scale(0);
+      text-transform: uppercase;
+    }
+    p{
+      &:first-child{
+        margin-top: 1rem;
+      }
+    }
+  }
+  #big-register{
+    padding: 2rem;
+    button{
+      background-color: $highlight-color-light;
+      font-size: modular-scale(1);
+      font-family: $heading-font-family;
+      width: 100%;
+      &:hover{
+        background-color: shade($highlight-color-light, 20);
+      }
+    }
+  }
+  #event-location{
+    background-image: url('/assets/images/honeyville-location.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+    //height: 30rem;
+    padding: 4rem 2rem;
+    h1{
+      color: white;
+      font-size: modular-scale(2);
+    }
+    p{
+      color: white;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+    button{
+      color: white;
+      background-color: $highlight-color-light;
+      &:hover{
+        background-color: shade($highlight-color-light, 20);
+      }
+    }
+  }
+  #about{
+    padding: 4rem 2rem;
+    h1{
+      font-family: $heading-font-family-dark;
+      font-size: modular-scale(1);
+      color: $highlight-color-dark;
+      text-transform: none;
+    }
+  }
+  #sponsor-footer{
+    background-color: $highlight-color-light;
+    padding: 2rem 2rem;
+    text-align: center;
+    //height: 10rem;
+    h1{
+      color: white;
+    }
+    img{
+      max-height: 6rem;
+      max-width: 8rem;
+    }
+  }
+  .content{
+    //position: absolute;
+    //overflow-y: scroll;
+    //height: 100%;
+    //width: 100%;
+    //padding: 2rem;
+  }  
+  @media (max-width: 800px){
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+    overflow: visible;
+    padding: 0;
+    & .content{
+      overflow: visible;
+    }
+    //height: auto !important;
+    #countdown, #farm, #mission, #sign-up, #upcoming-events{
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+button{
+  background-color: $highlight-color-dark;
+  text-transform: uppercase;
+}
+
+.farm-grid{
+  display: flex;
+  flex-wrap: wrap;
+  .farm-item{
+    flex-basis: 33.333%;
+    background-color: $light-gray;
+    background-size: cover;
+    background-position: center center;
+    height: 100px;
+    &:nth-child(even){
+      background-color: shade($light-gray, 20);
+    }
+    a{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  .event-info{
+    flex-basis: 60%;
+    margin-right: 2rem;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+  .special-button{
+    @extend button;
+    background-color: white;
+    color: $base-font-color;
+    border: 1px solid $highlight-color-dark;
+    text-transform: none;
+    font-weight: normal;
+    line-height: 1.5rem;
+    padding: .5rem 10rem .5rem 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    &:hover{
+      background-color: $highlight-color-light;
+    }
+    &:after{
+      content: '>';
+      position: absolute;
+      right: 1.5rem;
+      top: 1.2rem;
+      color: $highlight-color-dark;
+    }
+    span{
+      font-weight: 700;
+    }
+  }
+  .event-sponsors{
+    flex-basis: 30%;
+    flex-grow: 2;
+    margin-left: 2rem;
+    border: 1px solid $highlight-color-dark;
+    border-radius: 4px;
+    text-align: center;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      margin-left: 0;
+    }
+    h1{
+      color: white !important;
+      background-color: $highlight-color-dark;
+      font-size: modular-scale(0);
+      text-align: center;
+      text-transform: uppercase;
+      padding: 1rem 0;
+    }
+    img{
+      padding: 1rem;
+    }
+  }
+  .about-info{
+    flex-basis: 60%;
+    margin-right: 2rem;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+  .about-logo{
+    flex-basis: 30%;
+    flex-grow: 2;
+    margin-left: 2rem;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+.benefits{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  align-items: center;
+  .benefit-logo{
+    flex-basis: 40%;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      padding-bottom: 2rem;
+    }
+  }
+  .benefit-details{
+    flex-basis: 60%;
+    padding-left: 2rem;
+    font-weight: 700;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+}
+
+.offset-images{
+  display: flex;
+  height: 20rem;
+  align-items: stretch;
+  .offset-big{
+    flex-basis: 66.666%;
+    background-image: url('/assets/images/slideshow6.jpg');
+    background-size: cover;
+    background-position: center center;
+    @media(max-width: 800px){
+      flex-basis: 50%;
+    }
+  }
+  .offset-small{
+    flex-basis: 33.333%;
+    background-image: url('/assets/images/SarahandShannon2.jpg');
+    background-size: cover;
+    background-position: center center;
+    @media(max-width: 800px){
+      flex-basis: 50%;
+    }
+  }
+}
+
+.upcoming{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 1rem;
+  li{
+    flex-basis: 50%;
+    padding: 2rem;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+      padding: 1rem;
+    }
+  }
+  .event-info{
+    background-color: $nav-background-color;
+  }
+  .event-action{
+    background-color: $highlight-color-light;
+    .center{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.2rem;
+      @media (max-width: 800px){
+        margin-top: 0;
+      }
+    }
+    .event-cost{
+      //flex-basis: 30%;
+    }
+    .event-buttons{
+      //flex-basis: 70%;
+      text-align: right;
+    }
+    p{
+      color: white;
+      font-weight: bold;
+    }
+    button{
+      display: inline-block;
+      background-color: white;
+      color: $highlight-color-light;
+      font-weight: normal;
+      font-size: modular-scale(-1);
+      &:hover{
+        background-color: shade(white, 20);
+      }
+      @media (max-width: 800px){
+        min-width: 6rem;
+      }
+    }
+  }
+  h1{
+    font-size: modular-scale(0);
+    font-weight: 700;
+    margin: 0;
+  }
+  h2{
+    margin: 0;
+    text-transform: uppercase;
+  }
+  p{
+    margin: 0;
+    //font-size: modular-scale(-1);
+  }
+}
+
+.footer{
+  display: flex;
+  //flex-wrap: wrap;
+  justify-content: space-around;
+  @media (max-width: 800px){
+    flex-wrap: wrap;
+  }
+  .circus-logo{
+    flex-basis: 20%;
+    padding: 2rem 0 2rem 2rem;
+    text-align: center;
+    @media (max-width: $medium-screen){
+      flex-basis: 40%;
+    }
+  }
+  .circus-links{
+    //flex-basis: 40%;
+    flex-shrink: 2;
+    padding: 2rem;
+    h3, a{
+      line-height: 1.8rem;
+    }
+    button{
+      margin-top: 2rem;
+    }
+    @media (max-width: 800px){
+      flex-basis: 60%;
+    }
+  }
+  .contact-form{
+    flex-basis: 40%;
+    padding: 2rem;
+    @media (max-width: 800px){
+      flex-basis: 100%;
+    }
+    input[type=text], textarea{
+      font-size: modular-scale(-1);
+    }
+    h3{
+      margin-bottom: .75rem;
+    }
+  }
+  h3{
+    text-transform: uppercase;
+    font-size: modular-scale(0);
+    margin: 0;
+  }
+  button{
+    background-color: $footer-dark;
+    &:hover{
+      background-color: tint($footer-dark, 10);
+    }
+  }
+}
+
+.ClassyCountdown-days, .ClassyCountdown-hours, .ClassyCountdown-minutes, .ClassyCountdown-seconds{
+  width: calc(25% - 20px);
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  @media (max-width: 800px){
+    width: calc(25% - 4px);
+    margin: 2px;
+  }
+}
+
+.ClassyCountdown-value{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  display: block;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "dusty-proto",
+  "homepage": "https://github.com/rwboyer/dusty-proto",
+  "authors": [
+    "Robert W Boyer <rwboyer@mac.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.countdown": "^2.2.0",
+    "bourbon": "^4.2.7",
+    "jquery": "^3.1.0",
+    "neat": "^1.8.0",
+    "jquery-colorbox": "^1.6.4"
+  }
+}
