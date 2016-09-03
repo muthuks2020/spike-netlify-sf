@@ -5,9 +5,6 @@ const sass = require('sass-loader')
 const extract_plug = require('extract-text-webpack-plugin')
 
 module.exports = {
-  matchers: {
-    css: '*.scss'
-  },
   module: {
     loaders: [{
       test: /\.scss$/,
