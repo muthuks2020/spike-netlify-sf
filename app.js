@@ -2,13 +2,13 @@ const htmlStandards = require('spike-html-standards')
 const cssStandards = require('spike-css-standards')
 const latest = require('babel-preset-latest')
 const sass = require('sass-loader')
-const extract_plug = require('extract-text-webpack-plugin')
 
 module.exports = {
   module: {
     loaders: [{
       test: /\.scss$/,
-      loaders: ['postcss-loader', 'sass-loader']
+      loaders: ['postcss-loader', 'sass-loader'],
+      extension: 'css'
     }]
   },
   devtool: 'source-map',
