@@ -13,7 +13,6 @@
     "image-webpack-loader": "^2.0.0",
     "node-sass": "^3.8.0",
     "sass-loader": "^4.0.1",
-    "script-loader": "^0.7.0",
     "spike": "^0.12.0",
     "spike-css-standards": "^0.1.0",
     "spike-html-standards": "^0.3.5",
@@ -23,7 +22,6 @@
     "ava": "^0.16.0",
     "rimraf": "^2.5.4",
     "snazzy": "^4.0.1",
-    "spike-core": "^0.12.0",
     "standard": "^8.0.0"
   },
   "homepage": "https://github.com/rwboyer/spike-netlify-sf",

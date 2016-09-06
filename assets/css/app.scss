@@ -1,8 +1,9 @@
-@import "bower_components/bourbon/app/assets/stylesheets/bourbon" ;
-@import "fonts" ;
-@import "base/base" ;
-@import "layout" ;
-@import "navigation";
-@import "modal";
-//@import "/assets/slick-circular/css/jquery.classycountdown.css" ;
-//@import "/bower_components/jquery-colorbox/example2/colorbox.css" ;
+
+.some-class{
+  display: flex;
+  flex-wrap: wrap;
+  flex-justify: stretch;
+  .other-class{
+    flex-basis: 33.333%;
+  }
+}
